@@ -17,9 +17,20 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: josephakayesi/web:v0.0.4 # <-- replace/tag accordingly
+          image: josephakayesi/web:v0.0.5 # <-- replace/tag accordingly
           ports:
             - containerPort: 3000
           env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             - name: PORT
               value: "3000"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
