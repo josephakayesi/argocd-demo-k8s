@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: josephakayesi/web:v0.0.1 # <-- replace/tag accordingly
+          image: josephakayesi/web:v0.0.3 # <-- replace/tag accordingly
           ports:
             - containerPort: 3000
           env:
